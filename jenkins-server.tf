@@ -20,7 +20,7 @@ resource "aws_instance" "jenkinsapp-server" {
   vpc_security_group_ids      = [aws_default_security_group.default-sg.id]
   availability_zone           = var.avail_zone
   associate_public_ip_address = true
-  user_data                   = file("new-jenkins-script.sh")
+  user_data                   = file("jenkins-1.sh")
   tags = {
     Name = "${var.env_prefix}-jenkins-server"
   }

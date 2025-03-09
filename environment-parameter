@@ -1,0 +1,16 @@
+pipeline{
+    agent any
+    environment {
+        ubuntu-IP= '172.72.72.1'
+        tomcat-IP= '173.73.73.2'
+}
+stages{
+    stage("environment"){
+        steps{
+            echo 'i am deploying to ubuntu-ip ${params.ubuntu-IP} i am also deploying to tomcat-ip ${params.tomcat-IP}' 
+        }
+    }
+}
+
+    
+}

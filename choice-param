@@ -1,0 +1,62 @@
+pipeline{
+    agent any
+    parameters {
+        choice choices: ['QA', 'staging', 'Dev', 'Production'], description: 'choose your environment', name: 'Appenv'
+    }
+stages{
+    stage("deploy to Dev"){
+        when {
+            expression {
+                //return params.Appenv
+                return params.Appenv=="Dev"
+            }
+        }
+        
+        steps{
+            
+            echo "welcome please deploy to  ${params.Appenv}"
+        }
+    }
+    stage("deploy to QA"){
+        when {
+            expression {
+                //return params.Appenv
+                return params.Appenv=="QA"
+            }
+        }
+        
+        steps{
+            
+            echo "welcome please deploy to  ${params.Appenv}"
+        }
+    }
+    stage("deploy to staging"){
+        when {
+            expression {
+                //return params.Appenv
+                return params.Appenv=="staging"
+            }
+        }
+        
+        steps{
+            
+            echo "welcome please deploy to  ${params.Appenv}"
+        }
+    }
+    stage("deploy to production"){
+        when {
+            expression {
+                //return params.Appenv
+                return params.Appenv=="production"
+            }
+        }
+        
+        steps{
+            
+            echo "welcome please deploy to  ${params.Appenv}"
+        }
+    }
+}
+
+    
+}
